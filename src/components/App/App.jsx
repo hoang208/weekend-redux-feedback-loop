@@ -3,6 +3,8 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Header from '../Header/Header';
+import Feeling from '../Feeling/Feeling';
+import "./App.css";
 
 function App() {
 
@@ -35,7 +37,7 @@ function App() {
             </li>
           </Route>
           <Route exact path="/feeling">
-            {/* <Feeling /> */}
+            <Feeling />
           </Route>
           <Route exact path="/feedback">
             {/* <Feedback /> */}
