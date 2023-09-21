@@ -1,9 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import { Router } from 'express';
-import { Link } from '@mui/material';
-import { Route } from 'react-router-dom/cjs/react-router-dom.min';
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
 
@@ -15,7 +13,11 @@ function App() {
       </header>
       <Router>
         <div>
-          <ul className="nav">
+          <Route path="/">
+            {/* <Header /> */}
+          </Route>
+          <Route exact path="/">
+            {/* <Home /> */}
             <li>
               <Link to="/">Product</Link>
             </li>
@@ -32,14 +34,8 @@ function App() {
               <Link to="/comment">Comment</Link>
             </li>
             <li>
-              <Link to="/success">Comment</Link>
+              <Link to="/success">success</Link>
             </li>
-          </ul>
-          <Route path="/">
-            {/* <Header /> */}
-          </Route>
-          <Route exact path="/">
-            {/* <Home /> */}
           </Route>
           <Route exact path="/feeling">
             {/* <Feeling /> */}
