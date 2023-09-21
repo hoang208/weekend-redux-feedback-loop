@@ -32,6 +32,15 @@ const understanding = (state = 0, action) => {
   return state;
 };
 
+//Supported Rating
+const supported = (state = 0, action) => {
+    if (action.type === "ADD_SUPPORTED") {
+      return state + action.payload;
+    }
+  
+    return state;
+  };
+
 // Store
 const storeInstance = createStore(
   combineReducers({
