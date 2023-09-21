@@ -7,7 +7,7 @@ import { Card, CardContent, MenuItem, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-export default function Feeling() {
+export default function Understanding() {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -34,10 +34,10 @@ export default function Feeling() {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
-      type: "ADD_FEELING",
+      type: "ADD_UNDERSTANDING",
       payload: rating,
     });
-    history.push("/understanding");
+    history.push("/supported");
   };
 
   return (
@@ -52,13 +52,13 @@ export default function Feeling() {
           <Card variant="outlined">
             <CardContent>
               <Typography variant="h5" gutterBottom>
-                How are you feeling today?
+                How well are you understanding the content?
               </Typography>
               <form onSubmit={handleSubmit}>
                 <TextField
                   id="rating-select"
                   select
-                  label="Feeling"
+                  label="Understanding"
                   helperText="Please select your rating"
                   defaultValue="3"
                   onChange={(event) => setRating(event.target.value)}

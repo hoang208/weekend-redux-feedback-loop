@@ -4,7 +4,7 @@ import './App.css';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Header from '../Header/Header';
 import Feeling from '../Feeling/Feeling';
-import "./App.css";
+import Understanding from '../Understanding/Understanding';
 
 function App() {
 
@@ -24,7 +24,7 @@ function App() {
               <Link to="/feeling">Feeling</Link>
             </li>
             <li>
-              <Link to="/feedback">Feedback</Link>
+              <Link to="/understanding">Understanding</Link>
             </li>
             <li>
               <Link to="/supported">Supported</Link>
@@ -39,8 +39,8 @@ function App() {
           <Route exact path="/feeling">
             <Feeling />
           </Route>
-          <Route exact path="/feedback">
-            {/* <Feedback /> */}
+          <Route exact path="/understanding">
+            <Understanding />
           </Route>
           <Route exact path="/supported">
             {/* <Supported /> */}
