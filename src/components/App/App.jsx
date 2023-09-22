@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
+import Comment from '../Comment/Comment';
 
 function App() {
 
@@ -34,6 +35,9 @@ function App() {
               <Link to="/comment">Comment</Link>
             </li>
             <li>
+              <Link to="/review">review</Link>
+            </li>
+            <li>
               <Link to="/success">success</Link>
             </li>
           </Route>
@@ -47,7 +51,10 @@ function App() {
             <Supported />
           </Route>
           <Route exact path="/comment">
-            {/* <Comment /> */}
+            <Comment />
+          </Route>
+          <Route exact path="/review">
+            {/* <Success /> */}
           </Route>
           <Route exact path="/success">
             {/* <Success /> */}

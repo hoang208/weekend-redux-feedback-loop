@@ -34,18 +34,30 @@ const understanding = (state = 0, action) => {
 
 //Supported Rating
 const supported = (state = 0, action) => {
-    if (action.type === "ADD_SUPPORTED") {
-      return state + action.payload;
-    }
-  
-    return state;
-  };
+  if (action.type === "ADD_SUPPORTED") {
+    return state + action.payload;
+  }
+
+  return state;
+};
+
+//Comment
+const comment = (state = [], action) => {
+  // TODO: Save Products added to the cart
+  if (action.type === "ADD_COMMENT") {
+    return [...state, action.payload];
+  }
+
+  return state;
+};
 
 // Store
 const storeInstance = createStore(
   combineReducers({
     feeling,
-    understanding
+    understanding,
+    supported,
+    comment,
   }),
   applyMiddleware(logger)
 );
