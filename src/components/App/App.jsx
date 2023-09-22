@@ -1,43 +1,26 @@
-import React from 'react';
-import axios from 'axios';
-import './App.css';
+import React from "react";
+import axios from "axios";
+import "./App.css";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-import Header from '../Header/Header';
-import Feeling from '../Feeling/Feeling';
-import Understanding from '../Understanding/Understanding';
-import Supported from '../Supported/Supported';
-import Comment from '../Comment/Comment';
-import Review from '../Review/Review';
+import Header from "../Header/Header";
+import Feeling from "../Feeling/Feeling";
+import Understanding from "../Understanding/Understanding";
+import Supported from "../Supported/Supported";
+import Comment from "../Comment/Comment";
+import Review from "../Review/Review";
+import Home from "../Home/Home";
+import Success from "../Success/Success";
 
 function App() {
-
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
         <div>
           <Route path="/">
             <Header />
           </Route>
           <Route exact path="/">
-            {/* <Home /> */}
-            <li>
-              <Link to="/feeling">Feeling</Link>
-            </li>
-            <li>
-              <Link to="/understanding">Understanding</Link>
-            </li>
-            <li>
-              <Link to="/supported">Supported</Link>
-            </li>
-            <li>
-              <Link to="/comment">Comment</Link>
-            </li>
-            <li>
-              <Link to="/review">review</Link>
-            </li>
-            <li>
-              <Link to="/success">success</Link>
-            </li>
+            <Home />
           </Route>
           <Route exact path="/feeling">
             <Feeling />
@@ -55,7 +38,7 @@ function App() {
             <Review />
           </Route>
           <Route exact path="/success">
-            {/* <Success /> */}
+            <Success />
           </Route>
         </div>
       </Router>
