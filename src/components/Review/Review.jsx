@@ -15,30 +15,30 @@ export default function Review() {
   const supported = useSelector(store=>store.supported)
   const comment = useSelector(store=>store.comment)
   const history = useHistory();
-//   const [review, setReview] = useState({
-//     feeling: 1,
-//     understanding: 1,
-//     support: 1,
-//     comments: "",
-//   });
+  const [review, setReview] = useState({
+    feeling: feeling,
+    understanding: understanding,
+    support: supported,
+    comments: comment.comment,
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    history.push("/success");
-    // axios
-    //   .post(`/products`, review)
-    //   .then((response) => {
-    //     setReview({
-    //       feeling: "",
-    //       understanding: "",
-    //       support: "",
-    //       comments: "",
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //     alert(`Sorry, couldn't submit review at this time. Try again later`);
-    //   });
+    axios
+      .post(`/feedback`, review)
+      .then((response) => {
+        setReview({
+          feeling: "",
+          understanding: "",
+          support: "",
+          comments: "",
+        });
+        history.push("/success");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(`Sorry, couldn't submit review at this time. Try again later`);
+      });
   };
 
   return (
