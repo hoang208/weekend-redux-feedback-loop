@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { Card, CardContent, MenuItem, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -12,24 +12,6 @@ export default function Comment() {
   const history = useHistory();
 
   const [comment, setComment] = useState({ comment: "" });
-
-  const ratings = [
-    {
-      value: 1,
-    },
-    {
-      value: 2,
-    },
-    {
-      value: 3,
-    },
-    {
-      value: 4,
-    },
-    {
-      value: 5,
-    },
-  ];
 
   const handleSubmit = (event) => {
     event.preventDefault();
