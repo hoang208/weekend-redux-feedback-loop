@@ -40,6 +40,14 @@ export default function Supported() {
     history.push("/comment");
   };
 
+  const handleBack = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: "DELETE_UNDERSTANDING",
+    });
+    history.push("/understanding");
+  };
+
   return (
     <>
       <Box
@@ -54,7 +62,7 @@ export default function Supported() {
               <Typography variant="h5" gutterBottom>
                 How well are you being supported?
               </Typography>
-              <form onSubmit={handleSubmit}>
+              <form>
                 <TextField
                   id="rating-select"
                   select
@@ -75,8 +83,19 @@ export default function Supported() {
                   size="large"
                   disableElevation
                   color="success"
+                  onClick={handleSubmit}
                 >
                   Next
+                </Button>
+                <Button
+                  type="submit"
+                  variant="text"
+                  size="large"
+                  disableElevation
+                  color="error"
+                  onClick={handleBack}
+                >
+                  GO BACK
                 </Button>
               </form>
             </CardContent>

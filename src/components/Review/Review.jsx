@@ -1,19 +1,18 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Alert, Card, CardContent, Snackbar, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 
 export default function Review() {
   const dispatch = useDispatch();
-  const feeling = useSelector(store=>store.feeling)
-  const understanding = useSelector(store=>store.understanding)
-  const supported = useSelector(store=>store.supported)
-  const comment = useSelector(store=>store.comment)
+  const feeling = useSelector((store) => store.feeling);
+  const understanding = useSelector((store) => store.understanding);
+  const supported = useSelector((store) => store.supported);
+  const comment = useSelector((store) => store.comment);
   const history = useHistory();
   const [review, setReview] = useState({
     feeling: feeling,
@@ -39,6 +38,14 @@ export default function Review() {
         console.log(error);
         alert(`Sorry, couldn't submit review at this time. Try again later`);
       });
+  };
+
+  const handleBack = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: "DELETE_COMMENT",
+    });
+    history.push("/comment");
   };
 
   return (
@@ -76,15 +83,26 @@ export default function Review() {
               >
                 Comments: {comment.comment}
               </Typography>
-              <form onSubmit={handleSubmit}>
+              <form>
                 <Button
                   type="submit"
                   variant="text"
                   size="large"
                   disableElevation
                   color="success"
+                  onClick={handleSubmit}
                 >
                   Submit
+                </Button>
+                <Button
+                  type="submit"
+                  variant="text"
+                  size="large"
+                  disableElevation
+                  color="error"
+                  onClick={handleBack}
+                >
+                  GO BACK
                 </Button>
               </form>
             </CardContent>
