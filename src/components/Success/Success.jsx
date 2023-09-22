@@ -4,12 +4,16 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Card, CardActions, CardContent, Typography } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useDispatch } from "react-redux";
 
 export default function Success() {
   const history = useHistory();
+  const dispatch = useDispatch();
   const handleSubmit = (event) => {
-    event.preventDefault();
     history.push("/");
+    dispatch({
+        type: "RESET",
+      });
   };
   return (
     <>

@@ -19,6 +19,12 @@ const feeling = (state = 0, action) => {
   if (action.type === "ADD_FEELING") {
     return state + action.payload;
   }
+  if (action.type === "DELETE_FEELING") {
+    return 0;
+  }
+  if (action.type === "RESET") {
+    return 0
+  }
 
   return state;
 };
@@ -27,6 +33,12 @@ const feeling = (state = 0, action) => {
 const understanding = (state = 0, action) => {
   if (action.type === "ADD_UNDERSTANDING") {
     return state + action.payload;
+  }
+  if (action.type === "DELETE_UNDERSTANDING") {
+    return 0;
+  }
+  if (action.type === "RESET") {
+    return 0
   }
 
   return state;
@@ -37,6 +49,12 @@ const supported = (state = 0, action) => {
   if (action.type === "ADD_SUPPORTED") {
     return state + action.payload;
   }
+  if (action.type === "DELETE_SUPPORTED") {
+    return 0;
+  }
+  if (action.type === "RESET") {
+    return 0
+  }
 
   return state;
 };
@@ -46,6 +64,12 @@ const comment = (state = [], action) => {
   // TODO: Save Products added to the cart
   if (action.type === "ADD_COMMENT") {
     return action.payload;
+  }
+  if (action.type === "DELETE_COMMENT") {
+    return [];
+  }
+  if (action.type === "RESET") {
+    return [];
   }
 
   return state;
