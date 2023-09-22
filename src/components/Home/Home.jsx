@@ -36,18 +36,17 @@ export default function Home() {
                 align="center"
                 style={{ wordWrap: "break-word" }}
               >
-                We appreciate any feedback you
-                provide. You should not feel pressured to answer any
-                questions in this form and submission is optional.
+                We appreciate any feedback you provide. You should not feel
+                pressured to answer any questions in this form and submission is
+                optional.
               </Typography>
-              <CardActions style={{justifyContent: 'center'}}>
+              <CardActions style={{ justifyContent: "center" }}>
                 <form onSubmit={handleSubmit}>
                   <Button
                     type="submit"
                     variant="outlined"
                     size="large"
                     color="success"
-                    
                   >
                     I'm ready to start!
                   </Button>

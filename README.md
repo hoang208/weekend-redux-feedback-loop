@@ -14,7 +14,7 @@ GIF showing application features:
 
 ## Description & Approach
 
-In order to better understand where each path should lead to, I created a flow chart of how each path is interconnected. This allowed me to keep organized as I was away of what each component should be doing.
+In order to better understand where each path should lead to, I created a flow chart of how each path is interconnected. This allowed me to keep organized as I was aware of what each component should be doing.
 ![](concept.png)
 
 

@@ -44,7 +44,7 @@ router.post("/", (req, res) => {
 // DELETE Route
 router.delete("/:id", (req, res) => {
   let idToDelete = req.params.id;
-  console.log('idToDelete',idToDelete)
+  console.log("idToDelete", idToDelete);
   let sqlText = `
         DELETE FROM feedback WHERE "id" = $1;
         `;

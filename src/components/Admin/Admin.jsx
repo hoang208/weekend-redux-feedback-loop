@@ -1,5 +1,4 @@
 import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import {
   Card,
@@ -13,7 +12,6 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -99,9 +97,7 @@ export default function Admin() {
                               })
                               .catch((error) => {
                                 console.log(error);
-                                alert(
-                                  `Error deleting. Try again later`
-                                );
+                                alert(`Error deleting. Try again later`);
                               });
                           }}
                         >
