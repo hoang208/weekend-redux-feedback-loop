@@ -11,7 +11,7 @@ export default function Feeling() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [rating, setRating] = useState(4);
+  const [rating, setRating] = useState(3);
 
   const ratings = [
     {
@@ -76,7 +76,7 @@ export default function Feeling() {
                   disableElevation
                   color="success"
                 >
-                  Submit
+                  Next
                 </Button>
               </form>
             </CardContent>

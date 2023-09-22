@@ -11,7 +11,7 @@ export default function Comment() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [comment, setComment] = useState({ comment: "" });
+  const [comment, setComment] = useState({ comment: "N/A" });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -48,8 +48,7 @@ export default function Comment() {
                       comment: event.target.value,
                     })
                   }
-                >
-                </TextField>
+                ></TextField>
                 <Button
                   type="submit"
                   variant="text"
@@ -57,7 +56,7 @@ export default function Comment() {
                   disableElevation
                   color="success"
                 >
-                  Submit
+                  Next
                 </Button>
               </form>
             </CardContent>

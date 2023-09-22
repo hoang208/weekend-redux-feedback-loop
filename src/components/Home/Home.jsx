@@ -5,11 +5,11 @@ import Box from "@mui/material/Box";
 import { Card, CardActions, CardContent, Typography } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-export default function Success() {
+export default function Home() {
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
-    history.push("/");
+    history.push("/feeling");
   };
   return (
     <>
@@ -29,14 +29,16 @@ export default function Success() {
                 style={{ wordWrap: "break-word" }}
                 component="div"
               >
-                Success
+                Welcome!
               </Typography>
               <Typography
                 variant="body1"
                 align="center"
                 style={{ wordWrap: "break-word" }}
               >
-                Thank you for filling out the feedback form! We look forward to reading your feedback.
+                We appreciate any feedback you
+                provide. You should not feel pressured to answer any
+                questions in this form and submission is optional.
               </Typography>
               <CardActions style={{justifyContent: 'center'}}>
                 <form onSubmit={handleSubmit}>
@@ -47,7 +49,7 @@ export default function Success() {
                     color="success"
                     
                   >
-                    Leave New Feedback
+                    I'm ready to start!
                   </Button>
                 </form>
               </CardActions>
