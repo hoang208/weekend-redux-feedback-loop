@@ -75,6 +75,14 @@ const comment = (state = [], action) => {
   return state;
 };
 
+const feedbackList = (state = [], action) => {
+    if (action.type === "GET_FEEDBACK") {
+      return action.payload;
+    }
+  
+    return state;
+  };
+
 // Store
 const storeInstance = createStore(
   combineReducers({
@@ -82,6 +90,7 @@ const storeInstance = createStore(
     understanding,
     supported,
     comment,
+    feedbackList
   }),
   applyMiddleware(logger)
 );

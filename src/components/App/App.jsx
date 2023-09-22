@@ -10,6 +10,7 @@ import Comment from "../Comment/Comment";
 import Review from "../Review/Review";
 import Home from "../Home/Home";
 import Success from "../Success/Success";
+import Admin from "../Admin/Admin";
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route exact path="/success">
             <Success />
+          </Route>
+          <Route exact path="/admin">
+            <Admin />
           </Route>
         </div>
       </Router>
