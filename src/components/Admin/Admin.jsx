@@ -19,7 +19,6 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
 export default function Admin() {
-  const history = useHistory();
   const dispatch = useDispatch();
   const feedbackList = useSelector((store) => store.feedbackList);
 
