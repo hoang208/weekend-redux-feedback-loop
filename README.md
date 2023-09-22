@@ -1,4 +1,4 @@
-# React Photo Gallery:
+# Redux Feedback Form:
 
 ## Description
 
