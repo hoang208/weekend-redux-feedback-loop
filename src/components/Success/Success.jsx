@@ -10,10 +10,10 @@ export default function Success() {
   const history = useHistory();
   const dispatch = useDispatch();
   const handleSubmit = (event) => {
-    history.push("/");
+    history.push("/feeling");
     dispatch({
-        type: "RESET",
-      });
+      type: "RESET",
+    });
   };
   return (
     <>
@@ -40,16 +40,17 @@ export default function Success() {
                 align="center"
                 style={{ wordWrap: "break-word" }}
               >
-                Thank you for filling out the feedback form! We look forward to reading your feedback.
+                Thank you for filling out the feedback form! We look forward to
+                reading your feedback.
               </Typography>
-              <CardActions style={{justifyContent: 'center'}}>
-                <form onSubmit={handleSubmit}>
+              <CardActions style={{ justifyContent: "center" }}>
+                <form>
                   <Button
                     type="submit"
                     variant="outlined"
                     size="large"
                     color="success"
-                    
+                    onClick={handleSubmit}
                   >
                     Leave New Feedback
                   </Button>

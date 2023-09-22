@@ -54,7 +54,7 @@ export default function Feeling() {
               <Typography variant="h5" gutterBottom>
                 How are you feeling today?
               </Typography>
-              <form onSubmit={handleSubmit}>
+              <form>
                 <TextField
                   id="rating-select"
                   select
@@ -75,6 +75,7 @@ export default function Feeling() {
                   size="large"
                   disableElevation
                   color="success"
+                  onClick={handleSubmit}
                 >
                   Next
                 </Button>

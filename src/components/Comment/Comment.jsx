@@ -22,6 +22,14 @@ export default function Comment() {
     history.push("/review");
   };
 
+  const handleBack = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: "DELETE_SUPPORTED",
+    });
+    history.push("/supported");
+  };
+
   return (
     <>
       <Box
@@ -36,7 +44,7 @@ export default function Comment() {
               <Typography variant="h5" gutterBottom>
                 Any comments you want to leave?
               </Typography>
-              <form onSubmit={handleSubmit}>
+              <form>
                 <TextField
                   id="outlined-basic"
                   label="Comment"
@@ -55,8 +63,19 @@ export default function Comment() {
                   size="large"
                   disableElevation
                   color="success"
+                  onClick={handleSubmit}
                 >
                   Next
+                </Button>
+                <Button
+                  type="submit"
+                  variant="text"
+                  size="large"
+                  disableElevation
+                  color="error"
+                  onClick={handleBack}
+                >
+                  GO BACK
                 </Button>
               </form>
             </CardContent>
