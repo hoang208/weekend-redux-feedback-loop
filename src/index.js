@@ -61,7 +61,6 @@ const supported = (state = 0, action) => {
 
 //Comment
 const comment = (state = [], action) => {
-  // TODO: Save Products added to the cart
   if (action.type === "ADD_COMMENT") {
     return action.payload;
   }
