@@ -3,16 +3,24 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import { Button, Stack, Toolbar } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useDispatch } from "react-redux";
 
 export default function Header() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleHome = () => {
     history.push("/");
+    dispatch({
+      type: "RESET",
+    });
   };
 
   const handleAdmin = () => {
     history.push("/admin");
+    dispatch({
+      type: "RESET",
+    });
   };
 
   return (
