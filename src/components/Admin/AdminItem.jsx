@@ -55,11 +55,11 @@ export default function AdminItem(props) {
       </TableCell>
       <TableCell component="th" scope="row">
         {clicked ? (
+          <Button onClick={updateFeedback}>Unflag</Button>
+        ) : (
           <Button color="error" onClick={updateFeedback}>
             Flag for Review
           </Button>
-        ) : (
-          <Button onClick={updateFeedback}>Unflag</Button>
         )}
       </TableCell>
     </TableRow>
