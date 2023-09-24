@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function AdminItem(props) {
-  const [clicked, setClicked] = useState(true);
+  const [clicked, setClicked] = useState(props.flagged);
   const toggleClick = () => setClicked((value) => !value);
 
   const deleteFeedback = () => {
