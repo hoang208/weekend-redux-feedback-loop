@@ -40,7 +40,7 @@ This web application is meant to create an interactive feedback form where users
  1. The user answers each question on the feedback form by selecting their choice and then selecting next.
  2. Using the go back button, users can go back and change their choices.
  3. Once the feedback form is submitted, the data is sent to the database
- 4. Admins can look at the admin tab to see all the feedback sent. Additionally, they can delete any feedback.
+ 4. Admins can look at the admin tab to see all the feedback sent. Additionally, they can delete any feedback or flag any for review.
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
