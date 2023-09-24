@@ -1,4 +1,3 @@
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import {
   Card,
@@ -15,6 +14,7 @@ import {
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import AdminItem from "./AdminItem";
 
 export default function Admin() {
   const dispatch = useDispatch();
@@ -66,45 +66,21 @@ export default function Admin() {
                     <TableCell>Support</TableCell>
                     <TableCell>Comments</TableCell>
                     <TableCell>Delete</TableCell>
+                    <TableCell>Review</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {feedbackList.map((feedback) => (
-                    <TableRow
+                    <AdminItem
                       key={feedback.id}
-                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                    >
-                      <TableCell component="th" scope="row">
-                        {feedback.feeling}
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        {feedback.understanding}
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        {feedback.support}
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        {feedback.comments}
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        <Button
-                          color="error"
-                          onClick={() => {
-                            axios
-                              .delete(`/feedback/${feedback.id}`, feedback)
-                              .then((response) => {
-                                getFeedback();
-                              })
-                              .catch((error) => {
-                                console.log(error);
-                                alert(`Error deleting. Try again later`);
-                              });
-                          }}
-                        >
-                          Delete
-                        </Button>
-                      </TableCell>
-                    </TableRow>
+                      id={feedback.id}
+                      feeling={feedback.feeling}
+                      understanding={feedback.understanding}
+                      support={feedback.support}
+                      comments={feedback.comments}
+                      flagged={feedback.flagged}
+                      getFeedback={getFeedback}
+                    />
                   ))}
                 </TableBody>
               </Table>
